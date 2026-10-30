@@ -48,11 +48,11 @@ jobs:
             --exclude-module PyQt6.QtQuick ^
             --exclude-module PyQt6.QtQuickWidgets ^
             --exclude-module PyQt6.QtQml ^
-            --icon icon.ico ^
-            --add-data "icon.ico;." ^
-            --add-data "themes;themes" ^
+            --icon src/icon.ico ^
+            --add-data "src/icon.ico;." ^
+            --add-data "src/themes;themes" ^
             --name LiteraTool ^
-            app.py
+            src/app.py
 
       - name: Archive build (7z)
         run: 7z a -mx=9 dist\LiteraTool-windows.7z .\dist\LiteraTool
