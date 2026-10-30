@@ -1,0 +1,63 @@
+name: Build Windows EXE
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build GUI EXE
+        shell: cmd
+        run: |
+          pyinstaller ^
+            --noconfirm ^
+            --windowed ^
+            --exclude-module PyQt6.QtWebEngine ^
+            --exclude-module PyQt6.QtWebEngineCore ^
+            --exclude-module PyQt6.QtWebEngineWidgets ^
+            --exclude-module PyQt6.QtMultimedia ^
+            --exclude-module PyQt6.QtMultimediaWidgets ^
+            --exclude-module PyQt6.QtBluetooth ^
+            --exclude-module PyQt6.QtNfc ^
+            --exclude-module PyQt6.QtSensors ^
+            --exclude-module PyQt6.Qt3DCore ^
+            --exclude-module PyQt6.Qt3DExtras ^
+            --exclude-module PyQt6.Qt3DInput ^
+            --exclude-module PyQt6.Qt3DLogic ^
+            --exclude-module PyQt6.Qt3DRender ^
+            --exclude-module PyQt6.QtQuick ^
+            --exclude-module PyQt6.QtQuickWidgets ^
+            --exclude-module PyQt6.QtQml ^
+            --icon icon.ico ^
+            --add-data "icon.ico;." ^
+            --add-data "themes;themes" ^
+            --name LiteraTool ^
+            app.py
+
+      - name: Archive build (7z)
+        run: 7z a -mx=9 dist\LiteraTool-windows.7z .\dist\LiteraTool
+
+      - name: Upload archive to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/LiteraTool-windows.7z
