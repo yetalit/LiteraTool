@@ -49,10 +49,13 @@ jobs:
             --exclude-module PyQt6.QtQuickWidgets ^
             --exclude-module PyQt6.QtQml ^
             --icon src/icon.ico ^
-            --add-data "src/icon.ico;." ^
+            --add-data "src/title.png;." ^
             --add-data "src/themes;themes" ^
             --name LiteraTool ^
             src/app.py
+
+      - name: Copy icon next to exe
+        run: Copy-Item src/icon.ico dist\LiteraTool\icon.ico
 
       - name: Archive build (7z)
         run: 7z a -mx=9 dist\LiteraTool-windows.7z .\dist\LiteraTool

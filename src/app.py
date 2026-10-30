@@ -8,7 +8,7 @@ import os
 if __name__ == "__main__":
     internal_path = '_internal' if '--src' not in sys.argv else ''
     app = QApplication([])
-    app.setWindowIcon(QIcon(os.path.join(internal_path, 'icon.ico')))
+    app.setWindowIcon(QIcon('icon.ico'))
     main_window = AppWindow('LiteraTool', (1280, 720), (600, 400), internal_path,
                             page_names=['Main Page', 'Year Dist.', 'Sankey',
                                         'Cat. Links', 'Author-Cat.', 'Co-Authorship'])
