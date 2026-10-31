@@ -54,8 +54,11 @@ jobs:
             --name LiteraTool ^
             src/app.py
 
-      - name: Copy icon next to exe
-        run: Copy-Item src/icon.ico dist\LiteraTool\icon.ico
+      - name: Copy extra files
+        run: |
+          Copy-Item src/icon.ico dist\LiteraTool\icon.ico
+          Copy-Item LICENSE dist\LiteraTool\
+          Copy-Item THIRD_PARTY_LICENSES.md dist\LiteraTool\
 
       - name: Archive build (7z)
         run: 7z a -mx=9 dist\LiteraTool-windows.7z .\dist\LiteraTool

@@ -1,4 +1,5 @@
 # -*-coding: utf-8 -*-
+# Modified by Tiyagora Yetalit (https://github.com/yetalit), 2026
 '''
 @file: sankeyflow.py
 @author: Riley Xu (https://github.com/riley-x)
@@ -378,7 +379,7 @@ class Sankey:
                     y += node_height_pad_min + node_pad_y
                 else:
                     ys.insert(0, (y, height))
-                    y += actual_height + node_pad_y
+                    y += height + node_pad_y
         else:
             y = 1
             if align_y == 'center':
