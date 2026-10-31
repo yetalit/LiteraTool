@@ -275,7 +275,7 @@ class YearIntervalDialog(QDialog):
         self.accept()
 
 class AppWindow(QMainWindow):
-    def __init__(self, title, def_size, min_size, internal_path, page_names):
+    def __init__(self, title, def_size, min_size, page_names):
         super().__init__()
         self.setWindowTitle(title)
         self.resize(def_size[0], def_size[1])
@@ -299,9 +299,9 @@ class AppWindow(QMainWindow):
                 else:
                     toolbar.addAction(actions[-1])
 
-        with open(os.path.join(internal_path, os.path.join('themes', 'btn.qss')), 'r') as file:
+        with open(os.path.join('_internal', 'themes', 'btn.qss'), 'r') as file:
             btn_ss = file.read()
-        with open(os.path.join(internal_path, os.path.join('themes', 'btn_active.qss')), 'r') as file:
+        with open(os.path.join('_internal', 'themes', 'btn_active.qss'), 'r') as file:
             btn_active_ss = file.read()
 
         # Main Page
@@ -312,7 +312,7 @@ class AppWindow(QMainWindow):
         title_label.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         title_label.setStyleSheet("background: transparent;")
 
-        pixmap = QPixmap(os.path.join(internal_path, 'title.png'))
+        pixmap = QPixmap(os.path.join('_internal', 'title.png'))
         pixmap = pixmap.scaled(
             362, 120,
             Qt.AspectRatioMode.KeepAspectRatio,

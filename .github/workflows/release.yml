@@ -49,8 +49,8 @@ jobs:
             --exclude-module PyQt6.QtQuickWidgets ^
             --exclude-module PyQt6.QtQml ^
             --icon src/icon.ico ^
-            --add-data "src/title.png;." ^
-            --add-data "src/themes;themes" ^
+            --add-data "src/_internal/title.png;." ^
+            --add-data "src/_internal/themes;themes" ^
             --name LiteraTool ^
             src/app.py
 
