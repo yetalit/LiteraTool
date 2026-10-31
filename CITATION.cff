@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: LiteraTool
+authors:
+  - family-names: A
+    given-names: B
+    orcid: "https://orcid.org/x"
+  - family-names: C
+    given-names: D
+    orcid: "https://orcid.org/y"
+version: 0.1.0
+doi: x  # software DOI
+date-released: 2026-x-x
+license: GPL-3.0
+preferred-citation:
+  type: article
+  title: "Full title of the paper"
+  authors:
+    - family-names: A
+      given-names: B
+      orcid: "https://orcid.org/x"
+    - family-names: C
+      given-names: D
+      orcid: "https://orcid.org/y"
+  journal: "Journal Name"
+  year: 2026
+  doi: x  # paper DOI

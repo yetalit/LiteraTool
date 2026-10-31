@@ -80,15 +80,20 @@ Licensed under the **GNU GPL v3.0**. See [`LICENSE`](LICENSE).
 
 ## Acknowledgements
 
-- **SankeyFlow** by [Riley Xu](https://github.com/riley-x/SankeyFlow) (BSD 2-Clause License). Our `sankeyflow.py` is a **modified version** of this library. The original license is kept in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+- **SankeyFlow** by [Riley Xu](https://github.com/riley-x/SankeyFlow) (BSD 2-Clause License). Our `sankeyflow.py` is a **modified version** of this library.
 - Built with [PyQt6](https://www.riverbankcomputing.com/software/pyqt/), [Matplotlib](https://matplotlib.org/), [NumPy](https://numpy.org/), [pandas](https://pandas.pydata.org/), and [openpyxl](https://openpyxl.readthedocs.io/).
 
 ## Citation
 
-If you use LiteraTool in your research, please cite:
-
 ```
-<Authors>. (2026). LiteraTool: Development of A Software Tool for Literature Analysis and Visualization. (Version 0.1.0) [Software]. <URL or DOI>
+@software{A_LiteraTool_2026,
+  author  = {A, B and C, D},
+  title   = {{LiteraTool}},
+  version = {0.1.0},
+  year    = {2026},
+  doi     = {x},
+  license = {GPL-3.0-only}
+}
 ```
 
 ## Feedback
